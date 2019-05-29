@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+<table class="table table-bordered">
+    <thead class="bg-dark">
+    <tr>
+        <th style="text-align: center; color:white">ID</th>
+        <th style="text-align: center; color:white;">Username</th>
+        <th style="text-align: center; color:white;">Status</th>
+        <th style="text-align: center; color:white;">About</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for profile in profiles_list %}
+        <tr>
+            <td style="text-align: center">{{profile.pk}}</td>
+            <td style="text-align: center">{{profile.username}}</td>
+            <td style="text-align: center">{{profile.status}}</td>
+            <td style="text-align: center">{{profile.about}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
